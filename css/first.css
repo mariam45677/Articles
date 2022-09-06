@@ -210,3 +210,130 @@ ul {
 @keyframes bouncing {
 }
 /* End Landing */
+
+/* start MainTitle */
+
+.main {
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-size: 30px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  transition: var(--main-transition);
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.main::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  left: -30%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  right: -30%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main:hover::before {
+  z-index: -1;
+  animation: Lmove 0.5s linear forwards;
+}
+.main:hover::after {
+  z-index: -1;
+  animation: Rmove 0.5s linear forwards;
+}
+.main:hover {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 0.5s;
+}
+@keyframes Lmove {
+  50% {
+    left: 0;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+@keyframes Rmove {
+  50% {
+    right: 0;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+#ararticles {
+  padding-top: 100px;
+}
+#articles .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+#articles .box {
+  box-shadow: 0 9px 19px rgb(0 0 0 / 17%);
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+#articles .box img {
+  max-width: 100%;
+  /* width: 100%; */
+}
+#articles .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 9px 19px rgb(0 0 0 / 20%);
+}
+.content {
+  padding: 20px;
+}
+.content p {
+  color: #00000099;
+  margin: 10px 0 0;
+}
+.info {
+  padding: 20px;
+  border-top: 1px solid #e6e6e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info a {
+  color: var(--main-color);
+}
+.info i {
+  color: var(--main-color);
+}
+#articles .box:hover .info i {
+  animation: moving 0.9s linear infinite;
+}
+@keyframes moving {
+  100% {
+    transform: translateX(10px);
+  }
+}
