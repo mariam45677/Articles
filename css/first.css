@@ -487,3 +487,41 @@ ul {
   background-position: left bottom;
   color: white;
 }
+/* End Features */
+.testimonials {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ececec;
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 30px;
+}
+.testimonials .box {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 5px 14px rgb(0 0 0 / 7%);
+}
+.testimonials .box img {
+  position: absolute;
+  right: -3px;
+  top: -50px;
+  width: 100px;
+  border-radius: 50%;
+  border: 6px solid #ececec;
+}
+.testimonials .box .title {
+  color: #777;
+  margin-bottom: 10px;
+  display: block;
+}
+.testimonials .box .filled {
+  color: #ffc107;
+}
+.testimonials .box p {
+  color: #777;
+}
+/* End testimonials */
